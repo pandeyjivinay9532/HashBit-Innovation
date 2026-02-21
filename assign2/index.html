@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<title> JS Assignment </title>
+</head>
+
+<body>
+
+<h2> Open Console to See Output </h2>
+
+<button onclick="runAll()"> Click to Run Code </button>
+
+
+<script>
+
+
+function q1()
+{
+ for(var i=1;i<=100;i++)
+ {
+  if(i%2==0)
+  {
+   console.log(i)
+  }
+ }
+}
+
+
+function calc(a,b,op)
+{
+ var ans
+
+ switch(op)
+ {
+  case "+":
+  ans=a+b
+  break
+
+  case "-":
+  ans=a-b
+  break
+
+  case "*":
+  ans=a*b
+  break
+
+  case "/":
+  ans=a/b
+  break
+
+  default:
+  ans="wrong op"
+ }
+
+ return ans
+}
+
+
+function findTax(sal)
+{
+ var tax=0
+
+ switch(true)
+ {
+  case (sal>0 && sal<=500000):
+  tax=0
+  break
+
+  case (sal>500000 && sal<=1000000):
+  tax=sal*0.10
+  break
+
+  case (sal>1000000 && sal<=1500000):
+  tax=sal*0.20
+  break
+
+  case (sal>1500000):
+  tax=sal*0.30
+  break
+ }
+
+ return tax
+}
+
+
+function sumProduct(n1,n2)
+{
+ var s1=n1.toString()
+ var s2=n2.toString()
+
+ var max=Math.max(s1.length,s2.length)
+
+ s1=s1.padStart(max,"0")
+ s2=s2.padStart(max,"0")
+
+ var sum=0
+
+ for(var i=0;i<max;i++)
+ {
+  sum=sum + (parseInt(s1[i]) * parseInt(s2[i]))
+ }
+
+ return sum
+}
+
+
+function runAll()
+{
+ console.log("Even Numbers")
+ q1()
+
+ console.log("Calculator + =",calc(10,5,"+"))
+
+ console.log("Tax =",findTax(1200000))
+
+ console.log("Digit Product Sum =",sumProduct(6,34))
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
