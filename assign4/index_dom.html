@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<title> DOM Assignment </title>
+</head>
+
+<body>
+
+
+<h2> Q1 Dark Theme </h2>
+
+<button onclick="dark()"> Dark </button>
+<button onclick="light()"> Light </button>
+
+<hr>
+
+
+
+<h2> Q2 Create Div </h2>
+
+<button onclick="makeDiv()"> Create Div </button>
+<div id="boxarea"></div>
+
+<hr>
+
+
+
+<h2> Q3 Hide Show Para </h2>
+
+<p id="para"> This is my paragraph text for hide show task </p>
+
+<button onclick="hidep()"> Hide </button>
+<button onclick="showp()"> Show </button>
+
+<hr>
+
+
+
+<h2> Q4 Dynamic CSS </h2>
+
+<div id="colorbox" style="width:200px;height:100px;border:1px solid black">
+ Click buttons to change color
+</div>
+
+<br>
+
+<button onclick="red()"> Red </button>
+<button onclick="blue()"> Blue </button>
+<button onclick="green()"> Green </button>
+
+
+
+<script>
+
+function dark()
+{
+ document.body.style.background="black"
+ document.body.style.color="white"
+}
+
+function light()
+{
+ document.body.style.background="white"
+ document.body.style.color="black"
+}
+
+
+
+function makeDiv()
+{
+ var d = document.createElement("div")
+
+ d.innerText="New Div Created"
+
+ d.style.border="1px solid black"
+ d.style.padding="10px"
+ d.style.margin="5px"
+
+ document.getElementById("boxarea").appendChild(d)
+}
+
+
+
+function hidep()
+{
+ document.getElementById("para").style.display="none"
+}
+
+function showp()
+{
+ document.getElementById("para").style.display="block"
+}
+
+
+
+function red()
+{
+ document.getElementById("colorbox").style.background="red"
+}
+
+function blue()
+{
+ document.getElementById("colorbox").style.background="blue"
+}
+
+function green()
+{
+ document.getElementById("colorbox").style.background="green"
+}
+
+</script>
+
+
+</body>
+</html>
