@@ -1,0 +1,143 @@
+<html>
+<head>
+<title> JS Assignment </title>
+</head>
+
+<body>
+
+<h2> Click Button & Open Console </h2>
+
+<button onclick="run()"> Run All </button>
+
+<div id="out"></div>
+
+<script>
+
+
+
+function run()
+{
+
+ var output=""
+
+
+
+ // Q1 Scope
+
+ function testScope()
+ {
+  var a = 10
+  let b = 20
+  const c = 30
+
+  if(true)
+  {
+   var a = 100
+   let b = 200
+   const c = 300
+  }
+
+  output += "Q1 var="+a+" let="+b+" const="+c+"<br>"
+ }
+
+ testScope()
+
+
+
+ // Q2 Fruits
+
+ var fruits = ["apple","banana","mango","orange","grapes"]
+
+ function getSecond()
+ {
+  return fruits[1]
+ }
+
+ output += "Q2 second fruit = "+getSecond()+"<br>"
+
+
+
+ // Q3 Push Pop
+
+ function modify(arr)
+ {
+  arr.push("new")
+  arr.pop()
+  return arr
+ }
+
+ output += "Q3 "+modify([1,2,3])+"<br>"
+
+
+
+ // Q4 Map square
+
+ var nums=[1,2,3,4]
+
+ var sq = nums.map(function(n){ return n*n })
+
+ output += "Q4 "+sq+"<br>"
+
+
+
+ // Q5 Filter odd
+
+ var odd = nums.filter(function(n){ return n%2!=0 })
+
+ output += "Q5 "+odd+"<br>"
+
+
+
+ // Q6 Greeting
+
+ var person = {name:"Vinay",age:22,occupation:"Student"}
+
+ output += "Q6 Hello I am "+person.name+"<br>"
+
+
+
+ // Q7 Area
+
+ function area(o)
+ {
+  return o.width * o.height
+ }
+
+ output += "Q7 area = "+area({width:10,height:5})+"<br>"
+
+
+
+ // Q8 Object keys
+
+ var keys = Object.keys({a:1,b:2,c:3})
+
+ output += "Q8 "+keys+"<br>"
+
+
+
+ // Q9 Merge objects
+
+ var merged = Object.assign({a:1},{b:2})
+
+ output += "Q9 "+JSON.stringify(merged)+"<br>"
+
+
+
+ // Q10 Reduce sum
+
+ var sum = [10,20,30].reduce(function(a,b){ return a+b })
+
+ output += "Q10 sum = "+sum+"<br>"
+
+
+
+ document.getElementById("out").innerHTML = output
+
+}
+
+
+
+</script>
+
+</body>
+</html>
