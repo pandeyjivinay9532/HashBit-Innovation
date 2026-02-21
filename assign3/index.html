@@ -1,0 +1,218 @@
+<html>
+<head>
+<title> JS Assignment 3 </title>
+</head>
+
+<body>
+
+<h2> Open Console to See Output </h2>
+<button onclick="run()"> Run All </button>
+
+<script>
+
+
+// q1
+
+var states = ["Uttar Pradesh","Bihar","Assam","Odisha","Kerala","Gujarat","Andhra Pradesh"]
+
+function q1()
+{
+ var ans = states.filter(function(s){
+  var ch = s[0].toLowerCase()
+  return !(ch=="a"||ch=="e"||ch=="i"||ch=="o"||ch=="u")
+ })
+ console.log("Q1",ans)
+}
+
+
+
+// q2
+
+function q2()
+{
+ var str = "I love my India"
+ var res = str.split(" ").reverse().join(" ")
+ console.log("Q2",res)
+}
+
+
+
+// q3
+
+function q3()
+{
+ var s = "INDIA"
+ var arr = s.split("")
+ arr.splice(3,0,"O","N","E","S")
+ console.log("Q3",arr.join(""))
+}
+
+
+
+// q4
+
+function q4()
+{
+ var txt = "this is my javascript assignment"
+ var v=0 , c=0
+
+ for(var i=0;i<txt.length;i++)
+ {
+  var ch = txt[i].toLowerCase()
+  if("aeiou".includes(ch)) v++
+  else if(ch>="a" && ch<="z") c++
+ }
+
+ console.log("Q4 vowels",v,"consonants",c)
+}
+
+
+
+// q5
+
+function correctfn(str,wrong,correct)
+{
+ return str.replace(wrong,correct)
+}
+
+function q5()
+{
+ console.log("Q5",correctfn("I luv india","luv","love"))
+}
+
+
+
+// q6
+
+function q6()
+{
+ var inputArr = [1,2,3,9,10,7,5,4,3]
+
+ var ans = inputArr.filter(function(n){
+  return n>5
+ })
+
+ console.log("Q6",ans)
+}
+
+
+
+// q7
+
+function q7()
+{
+ const students = [
+ { name: "Ram", scores: [80, 70, 60] },
+ { name: "Mohan", scores: [80, 70, 90] },
+ { name: "Sai", scores: [60, 70, 80] },
+ { name: "Hemang", scores: [90, 90, 80, 80] },
+ ]
+
+ var result = students.map(function(st){
+
+  var sum = st.scores.reduce(function(a,b){ return a+b })
+  var avg = sum / st.scores.length
+
+  return { name: st.name , average: avg }
+ })
+
+ console.log("Q7",result)
+}
+
+
+
+// q8
+
+function digitSum(n)
+{
+ while(n>9)
+ {
+  var s=0
+  var str=n.toString()
+  for(var i=0;i<str.length;i++)
+   s += parseInt(str[i])
+  n=s
+ }
+ return n
+}
+
+function q8()
+{
+ console.log("Q8",digitSum(456))
+}
+
+
+
+// q9
+
+function q9()
+{
+ var txt="This is my javascript assignment"
+ var words = txt.trim().split(" ").length
+ console.log("Q9",words)
+}
+
+
+
+// q10
+
+function q10()
+{
+ var s="Hello"
+ var rev = s.split("").reverse().join("")
+ console.log("Q10",rev)
+}
+
+
+
+// q11
+
+function q11()
+{
+ var data = [
+  {student1:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37}},
+  {student2:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37}},
+  {student3:{subject1:44,subject2:56,subject3:87,subject4:97,subject5:37}}
+ ]
+
+ var output = data.map(function(obj){
+
+  var key = Object.keys(obj)[0]
+  var marks = Object.values(obj[key])
+
+  var sum = marks.reduce(function(a,b){ return a+b })
+  var avg = sum / marks.length
+
+  var res = {}
+  res[key] = {average: avg}
+
+  return res
+ })
+
+ console.log("Q11",output)
+}
+
+
+
+// run all
+
+function run()
+{
+ q1()
+ q2()
+ q3()
+ q4()
+ q5()
+ q6()
+ q7()
+ q8()
+ q9()
+ q10()
+ q11()
+}
+
+
+</script>
+
+</body>
+</html>
